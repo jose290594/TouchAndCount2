@@ -116,11 +116,11 @@ ccialert1 = cciwindow2.findChild(QLabel, 'stat1')
 ####funcion Inicio de sesion
 def GetLogin1(userlog1, passw1):
     try:
-        connectionUser = MySQLdb.connect(host='nosvemosen.club',
+        connectionUser = MySQLdb.connect(host='xxxxxxxxxxxx',
                                              port=3336,
-                                             database='tacUsuario',
-                                             user='rjoseplenus',
-                                             password='6969Ti-te6969')
+                                             database='xxxUsuario',
+                                             user='xxxxxxxx',
+                                             password='xxxxxxxx')
 
         Querylog1 = """SELECT 
                                     usuario,
@@ -135,7 +135,7 @@ def GetLogin1(userlog1, passw1):
         cursorVen1.execute(Querylog1)
         #print(result)
         connectionUser.commit()
-        #print("Record inserted successfully into Laptop table")
+    
         record2 = cursorVen1.fetchall()
         cursorVen1.close()
         #print(record2)
@@ -152,23 +152,23 @@ def GetLogin1(userlog1, passw1):
                     loginwindow.close()
                     return userlog1
                 else:
-                    print('Wrong password!')
+                    print('Contraseña incorrecta!')
                     alerforlog1.setText('Datos incorrectos!')
             else:
-                print('Wrong user!')
+                print('Usuario incorrecto!')
         else:
-            print('Wrong credentials!')
+            print('Credenciales incorrectas!')
             alerforlog1.setText('Datos incorrectos!')
     except TypeError or EnvironmentError or IOError or ConnectionError:
         print('Error al cargar!')
 ####funcion contedo diario
 def countplusd1(codprod2, cantprend1):
     try:
-        connectionMActs = MySQLdb.connect(host='nosvemosen.club',
+        connectionMActs = MySQLdb.connect(host='xxxxxxxxxxxx',
                                          port=3336,
-                                         database='tacMovi',
-                                         user='rjoseplenus',
-                                         password='6969Ti-te6969')
+                                         database='xxxxMovi',
+                                         user='xxxxxxxx',
+                                         password='xxxxxxxx')
         putacts1 = """INSERT INTO lotediarioRC(codigo,
                                               cantidad, 
                                               fecha)
@@ -186,11 +186,11 @@ def countplusd1(codprod2, cantprend1):
 ####funcion ingresar venta al sistema
 def PostSale1(NomCli1, fechH1, montot1, userlog1, totefe1, totdeb1, totcred1, comments1):
     try:
-        connectionMovi = MySQLdb.connect(host='nosvemosen.club',
+        connectionMovi = MySQLdb.connect(host='xxxxxxxxxxxx',
                                          port=3336,
-                                         database='tacMovi',
-                                         user='rjoseplenus',
-                                         password='6969Ti-te6969')
+                                         database='xxxxMovi',
+                                         user='xxxxxxxx',
+                                         password='xxxxxxxx')
         putventonl1 = """INSERT INTO ventas(cliente,
                                               fecha, 
                                               total, 
@@ -284,11 +284,11 @@ def runPostSale(exCli1, extot1, Userlog1, exefect1, exdebi1, excredi1):
     PostSale1(NomCli1, fechH1, montot1, userlog1, totefe1, totdeb1, totcred1, comments1)
 ####funcion venta remueve de stock por separado
 def susprodstock1(codprod2, cantprend1):
-    connectionStock3 = MySQLdb.connect(host='nosvemosen.club',
+    connectionStock3 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                        port=3336,
-                                       database='tacStock',
-                                       user='rjoseplenus',
-                                       password='6969Ti-te6969')
+                                       database='xxxxStock',
+                                       user='xxxxxxxx',
+                                       password='xxxxxxxx')
     putventonl1 = """UPDATE stockRioCuarto 
 SET 
     CantidadDisp = CantidadDisp-"""+str(int(cantprend1))+"""
@@ -311,11 +311,11 @@ def rundrstock1(codsv1, cantsv1):
 ####funcion devolucion de producto
 def returnS1(codnum2, prodnom1, valprendev1, cantdev1, fechH1,fall1):
     fechH1=str(datetime.date.today())
-    connectionStock2 = MySQLdb.connect(host='nosvemosen.club',
+    connectionStock2 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                        port=3336,
-                                       database='tacStock',
-                                       user='rjoseplenus',
-                                       password='6969Ti-te6969')
+                                       database='xxxxStock',
+                                       user='xxxxxxxx',
+                                       password='xxxxxxxx')
     putventonl1 = """INSERT INTO devueltoRioCuarto(codigo,
                                               nombre, 
                                               precioDetal, 
@@ -339,11 +339,11 @@ def getprod1(callval1, codnum1, prodnom1):
 
     #loginwindow.show()
 
-    connectionStock1 = MySQLdb.connect(host='nosvemosen.club',
+    connectionStock1 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                      port=3336,
-                                     database='tacStock',
-                                     user='rjoseplenus',
-                                     password='6969Ti-te6969')
+                                     database='xxxxStock',
+                                     user='xxxxxxxx',
+                                     password='xxxxxxxx')
 
     QueryprodC1 = """SELECT 
                                     codigo,
@@ -389,7 +389,6 @@ def getprod1(callval1, codnum1, prodnom1):
         Nombpros1.setText(str(recordst1[int(i)][1]))
         pricest1.setText(str(recordst1[int(i)][2]))
         Busqlis1.addItem(itemN1)
-        print('sfsaf')
         Busqlis1.setItemWidget(itemN1, stockwwindow)
 ####funcion cargar data busqueda segun codigo(rungetprod1) o nombre(rungetprod2)
 def rungetprod1():
@@ -408,11 +407,11 @@ def startven1(NomCliinv1, fechinvH1, montotinv1, userlog1, totefeinv1, totdebinv
     rundrstock1(codsinv1, cantsinv1)
 ####funcion consultar total
 def getventt1(userresp1, montopre1):
-    connectionCier2 = MySQLdb.connect(host='nosvemosen.club',
+    connectionCier2 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                      port=3336,
-                                     database='tacMovi',
-                                     user='rjoseplenus',
-                                     password='6969Ti-te6969')
+                                     database='xxxxMovi',
+                                     user='xxxxxxxx',
+                                     password='xxxxxxxx')
     cierquery2 = """SELECT total FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
     cierquery2ef = """SELECT efectivo FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
     cierquery2de = """SELECT debito FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
@@ -421,22 +420,18 @@ def getventt1(userresp1, montopre1):
     cursorCie2 = connectionCier2.cursor()
     cursorCie2.execute(cierquery2)
     connectionCier2.commit()
-    #print("Record inserted successfully into Laptop table")
     record8 = cursorCie2.fetchall()
     cursorCie2 = connectionCier2.cursor()
     cursorCie2.execute(cierquery2ef)
     connectionCier2.commit()
-    #print("Record inserted successfully into Laptop table")
     record8ef = cursorCie2.fetchall()
     cursorCie2 = connectionCier2.cursor()
     cursorCie2.execute(cierquery2de)
     connectionCier2.commit()
-    #print("Record inserted successfully into Laptop table")
     record8de = cursorCie2.fetchall()
     cursorCie2 = connectionCier2.cursor()
     cursorCie2.execute(cierquery2cr)
     connectionCier2.commit()
-    #print("Record inserted successfully into Laptop table")
     record8cr = cursorCie2.fetchall()
     cursorCie2.close()
 
@@ -476,11 +471,11 @@ def getventt1(userresp1, montopre1):
 def addtoDesl1(codnum2, cannum2):
     indforwid1 = str(None)
     if codnum2 or cannum2 != None:
-        connectionStock4 = MySQLdb.connect(host='nosvemosen.club',
+        connectionStock4 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                            port=3336,
-                                           database='tacStock',
-                                           user='rjoseplenus',
-                                           password='6969Ti-te6969')
+                                           database='xxxxStock',
+                                           user='xxxxxxxx',
+                                           password='xxxxxxxx')
 
         QueryprodC4 = """SELECT 
                                                 codigo,
@@ -521,11 +516,11 @@ def runaddtoDesl1():
     addtoDesl1(codnum2, cannum2)
 ####funcio cierre diario
 def cierreDia1(userresp1, montopre1):
-    connectionCier = MySQLdb.connect(host='nosvemosen.club',
+    connectionCier = MySQLdb.connect(host='xxxxxxxxxxxx',
                                      port=3336,
-                                     database='tacMovi',
-                                     user='rjoseplenus',
-                                     password='6969Ti-te6969')
+                                     database='xxxxMovi',
+                                     user='xxxxxxxx',
+                                     password='xxxxxxxx')
     cierquery1 = """SELECT total FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
     cierquery1ef = """SELECT efectivo FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
     cierquery1de = """SELECT debito FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
@@ -534,22 +529,22 @@ def cierreDia1(userresp1, montopre1):
     cursorCie1 = connectionCier.cursor()
     cursorCie1.execute(cierquery1)
     connectionCier.commit()
-    #print("Record inserted successfully into Laptop table")
+
     record7 = cursorCie1.fetchall()
     cursorCie1 = connectionCier.cursor()
     cursorCie1.execute(cierquery1ef)
     connectionCier.commit()
-    #print("Record inserted successfully into Laptop table")
+
     record7ef = cursorCie1.fetchall()
     cursorCie1 = connectionCier.cursor()
     cursorCie1.execute(cierquery1de)
     connectionCier.commit()
-    #print("Record inserted successfully into Laptop table")
+
     record7de = cursorCie1.fetchall()
     cursorCie1 = connectionCier.cursor()
     cursorCie1.execute(cierquery1cr)
     connectionCier.commit()
-    #print("Record inserted successfully into Laptop table")
+
     record7cr = cursorCie1.fetchall()
     cursorCie1.close()
 
@@ -648,11 +643,11 @@ def pretotmont():
     totmont(Desgloselis1, extot1)
 ####funcion añadir al carrito
 def adtocart1(codnum2):
-    connectionStock4 = MySQLdb.connect(host='nosvemosen.club',
+    connectionStock4 = MySQLdb.connect(host='xxxxxxxxxxxx',
                                        port=3336,
-                                       database='tacStock',
-                                       user='rjoseplenus',
-                                       password='6969Ti-te6969')
+                                       database='xxxxStock',
+                                       user='xxxxxxxx',
+                                       password='xxxxxxxx')
 
     QueryprodC4 = """SELECT 
                                         codigo,
@@ -698,35 +693,9 @@ def quitfromdes1():
     Desgtabwid1.removeRow(caseee)
     realventtot1.setText(str(int(realventtot1.text())-int(twalfa)))
 
-    #Desgtabwid1.removeRow(int(Desgtabwid1.row(Desgtabwid1.selectedItems())))
-
-
-####funcion calcular prendas
-####funcion añadir cantidad a producto existente
-#def addQtoprod():
-####funcion consultar ventas del dia
-#def getstatday1():
-####funcion cierre diario
-#def closeday1():
-
-####funcion añadir producto nuevo a stock
-#def addStock1():
-#GetLogin1(userlog1,passw1)
-
-#def mainF():
-
-
-#btn_brow_1 = QPushButton('inisesbut1')
-
-####funcion iniciar sesion con click
 
 
 
-
-
-#while btn_brow_1.pressed():
-#    if btn_brow_1.released():
-#        getcreddat1()
 btn_brow_1.clicked.connect(getcreddat1)
 btn_cod_1.clicked.connect(rungetprod1)
 btn_nom_1.clicked.connect(rungetprod2)
@@ -736,10 +705,6 @@ execciebut2.clicked.connect(rrunPostSale)
 btn_cierre_1.clicked.connect(runcierwin)
 cciconf1.clicked.connect(precierreDia1)
 btn_qfdes_1.clicked.connect(quitfromdes1)
-    #RGetLogin1()
-#label = PySide2.QLabel("Hello World")
-#label.show()
-print(223423)
 sys.exit(app.exec_())
 loginfile = QFile("ventaventana.ui")
 loginfile.open(QFile.ReadOnly)
@@ -747,7 +712,3 @@ loader = QUiLoader()
 loginwindow = loader.load(loginfile)
 
 loginwindow.show()
-#PostSale1(NomCli1, fechH1, montot1, userlog1, totefe1, totdeb1, totcred1, comments1)
-
-
-"""SELECT * FROM ventas WHERE fecha >= '"""+str(datetime.date.today())+""" 00:00:00' AND fecha <= '"""+str(datetime.date.today())+""" 23:59:59';"""
